@@ -42,8 +42,8 @@ class ConfigurApp {
             this.server.set('views', __dirname + '/views');
             this.server.engine('html', require('ejs').renderFile);
             this.server.set('view engine', 'ejs');
-            let feodsRouter = createAndReturnConfigurRouter();
-            this.server.use(feodsRouter);
+            let configurRouter = createAndReturnConfigurRouter();
+            this.server.use(configurRouter);
             this.server.get("/testServerRoutes", function (req, res) {
                 res.send("Server is running correctly.");
             });
@@ -67,7 +67,7 @@ class ConfigurApp {
 let configurApp: ConfigurApp;
 function createSingletonApplication() {
     if (!configurApp) {
-        console.log("Instantiating Singleton Feods Application");
+        console.log("Instantiating Singleton Configur Application");
         configurApp = new ConfigurApp();
         return 0;
     } else {

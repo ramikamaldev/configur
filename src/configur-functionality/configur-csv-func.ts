@@ -18,8 +18,7 @@ export function extractCSVData(csvFileData) {
 export function writeCSVDataToTempFile(csvData) {
     let writeFileFunction = function (resolve, reject) {
         const bufferedData = Buffer.from(csvData.buffer);
-        if(!fs.existsSync(__dirname + `../../../tmp/`))
-        {
+        if (!fs.existsSync(__dirname + `../../../tmp/`)) {
             fs.mkdirSync(__dirname + `../../../tmp/`);
         }
         fs.writeFile(__dirname + `../../../tmp/${csvData.originalname}`, bufferedData, function (err) {
@@ -32,14 +31,14 @@ export function writeCSVDataToTempFile(csvData) {
     createAndReturnPromise(writeFileFunction);
 }
 
-export function insertCSVDataIntoCollection(csvData, res) {
+export function insertCSVDataIntoCollection(filename, csvData, res) {
 
     const bufferedData = Buffer.from(csvData.buffer);
     try {
         let xlsxFile = xlsx.read(bufferedData);
         const sheet = xlsxFile.Sheets[xlsxFile.SheetNames[0]];
         const parsedData = xlsx.utils.sheet_to_json(sheet, { raw: true });
-        insertDataIntoCSVCollection({ csv: parsedData });  
+        insertDataIntoCSVCollection(filename, { csv: parsedData });
     }
     catch (err) {
         console.log(err);

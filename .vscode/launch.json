@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\bin\\feods-app.js",
+            "program": "${workspaceFolder}\\bin\\configur-app.js",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ],

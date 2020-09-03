@@ -12,6 +12,8 @@
   <p>Please select a CSV file to upload.</p>
 
   <form action="http://localhost:5050/csv-upload" method="post" enctype="multipart/form-data">
+    <label for="filename">File Name (used to retrieve data from database): </label>
+    <input type="text" id="fileName" name="filename"><br/><br/>
     <input type="file" id="csvFile" name="configur-csv">
     <input type="submit">
   </form>
