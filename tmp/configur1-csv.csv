@@ -1,0 +1,6 @@
+id,firstName,lastName,email,phone,address1,address2,county,postcode,sales
+1,Josh,Evans,josh@configur.tech,7123456789,Tramshed Tech,Pendyris Street,Cardiff,CF11 6BH,"£120,000"
+2,Marco,Oliver,marco@configur.tech,7987654321,Tramshed Tech,Pendyris Street,Cardiff,CF11 6BH,"£110,000"
+3,John,Aqwe,john@configur.tech,2920657564,12 Rose Street,,Newport,NP18 2BL,"£87,854"
+4,Emma,Smith,emma@configur.tech,2018676543,29 Commercial Road,,Swansea,SA1 7YU,"£98,457"
+5,Richard,Jones,richard@configur.tech,7796876541,Unit D,Country Street,Bristol,BS1 9SJ,"£17,223"
