@@ -38,7 +38,6 @@ class ConfigurApp {
             this.server.use(bodyParser.json());
             this.server.use(fileUpload({
                 limits: { fileSize: 50 * 1024 * 1024 },
-                debug:true
             }));
             this.server.set('views', __dirname + '/views');
             this.server.engine('html', require('ejs').renderFile);
@@ -70,7 +69,6 @@ function createSingletonApplication() {
     if (!configurApp) {
         console.log("Instantiating Singleton Feods Application");
         configurApp = new ConfigurApp();
-        // console.log(configurApp);
         return 0;
     } else {
         return 1;

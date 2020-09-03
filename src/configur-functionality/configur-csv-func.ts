@@ -18,6 +18,10 @@ export function extractCSVData(csvFileData) {
 export function writeCSVDataToTempFile(csvData) {
     let writeFileFunction = function (resolve, reject) {
         const bufferedData = Buffer.from(csvData.buffer);
+        if(!fs.existsSync(__dirname + `../../../tmp/`))
+        {
+            fs.mkdirSync(__dirname + `../../../tmp/`);
+        }
         fs.writeFile(__dirname + `../../../tmp/${csvData.originalname}`, bufferedData, function (err) {
             if (err) {
                 reject(console.log("dirname" + err));
